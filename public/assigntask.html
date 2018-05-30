@@ -1,0 +1,27 @@
+<div ng-controller="adminCtrl">
+	
+<div class="container" style="padding: 50ptyx; padding-top: 2px" ng-show="a">
+
+<table class="table table-striped table-inverse"  >
+ 
+  <tbody>
+    <tr>
+      <td>Assign Task To</td>
+      <td><select ng-model="n" ng-options="my.email as my.name for my in a"></select></td>      
+    </tr>
+	<tr>
+	<td>Desciption</td>
+      <td> <textarea row="10" cols="200" rows="6" placeholder="enter your question" id="qsn" ng-model="qsn"></textarea>
+</td>
+ 
+    </tr>
+	
+	<tr><td>
+	<button id="submit" ng-click="getTask()">Update</button></td>
+	</tr>
+    
+  </tbody>
+</table>
+
+</div>	
+</div>

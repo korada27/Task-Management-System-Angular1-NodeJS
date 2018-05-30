@@ -1,0 +1,35 @@
+<div ng-controller="getprofileCtrl">
+	<div class="container" style="padding: 50ptyx; padding-top: 2px">
+<center><b>My Profile Details</b></center>
+<table class="table table-bordered table-inverse " ng-show="res1" ng-repeat="h in res1">
+ 
+  <tbody>
+    <tr class="bg-primary">
+      
+      <td class="bg-primary">Name</td>
+       <td>{{h.name}}</td>
+    </tr>
+    <tr class="bg-primary">
+      
+      <td class="bg-primary">Emp ID</td>
+      <td>{{h.eid}}</td>
+    </tr>
+    <tr class="bg-primary">
+      
+      <td class="bg-primary">Email</td>
+      <td>{{h.email}}</td>
+    </tr>
+    <tr class="bg-primary">
+     
+      <td class="bg-primary">Designation</td>
+      <td>{{h.designation}}</td>
+    </tr>
+	<tr class="bg-primary">
+      
+      <td class="bg-primary">Reports To</td>
+      <td>{{h.reportsTo}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>

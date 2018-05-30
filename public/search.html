@@ -1,0 +1,46 @@
+<div ng-controller="searchCtrl">
+
+
+ 
+ <div class="container" style="padding: 50ptyx; padding-top: 2px">APCloud Employee Details
+   <div class="list">
+<label class="item item-input">
+<input type="text" placeholder="Name" ng-model="data.name">
+</label>
+<button class="button button-block button-royal" ng-click="search(data)">Search</button>
+</div>
+</div><br><br>
+
+
+
+
+<div class="container" style="padding: 50ptyx; padding-top: 2px">
+
+<table class="table table-striped table-inverse" ng-show!="res2">
+  <thead>
+    <tr class="bg-primary">
+      <th>Employee Name</th>
+      <th>Email ID</th>
+      <th>Phone Number</th>
+      <th>Employee ID</th>
+      <th>Project Name</th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="h in res2">
+    <tr>
+     
+      <td>{{h.Name}}</td>
+      <td>{{h.Email}}</td>      
+      <td>{{h.Pno}}</td>
+      <td>{{h.Empid}}</td>
+      <td>{{h.Project}}</td>
+ 
+    </tr>
+    
+  </tbody>
+</table>
+
+</div>
+
+
+</div>

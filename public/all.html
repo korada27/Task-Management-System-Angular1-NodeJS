@@ -1,0 +1,218 @@
+<div ng-controller="empCtrl">
+<div class="container" style="padding: 50ptyx; padding-top: 2px">
+
+<table class="table table-striped table-inverse" ng-show="mani" >
+  <thead>
+    <tr class="bg-primary">
+      <th>Email ID</th>
+      <th>Task Description</th>
+      <th>Assigned By</th>
+      <th>Comments</th>
+      <th>Status</th>
+	  <th>Action</th>
+    </tr>
+  </thead>
+  <tbody  ng-repeat="teja in mani">
+    <tr>
+     
+      <td><input type="text" ng-value="teja.assignedto" ng-model="teja.assignedto" id="to"  class="form-control" placeholder="My Email ID"  readonly></td>
+      <td><textarea ng-value="teja.taskdetails" ng-model="teja.taskdetails" id="details"  class="form-control" placeholder="Task Description" readonly>
+				{{teja.taskdetails}}
+				</textarea></td>      
+      <td><input type="text" ng-value="teja.assignedby" ng-model="teja.assignedby" id="by"  class="form-control" placeholder="Assigned By" readonly>
+				</td>
+      <td><input type="text" class="form-control"  ng-value="teja.comments" ng-model="teja.comments" id="comments" placeholder="Comments" >
+				</td>
+      <td><select name="department" class="form-control" ng-value="teja.status" ng-model="teja.status" id="status">
+					<option value="">Status</option>
+					<option>Pending</option>
+					<option>Completed</option>
+					<option>Partial</option>
+					
+				</select></td>
+				
+		<td><button id="submit" ng-click="update(teja)">Update</button></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+
+
+
+
+<div ng-controller="adminCtrl">
+	
+<div class="container" style="padding: 50ptyx; padding-top: 2px" ng-show="a">
+
+<table class="table table-striped table-inverse"  >
+ 
+  <tbody>
+    <tr>
+      <td>Assign Task To</td>
+      <td><select ng-model="n" ng-options="my.email as my.name for my in a"></select></td>      
+    </tr>
+	<tr>
+	<td>Desciption</td>
+      <td> <textarea row="10" cols="200" rows="6" placeholder="enter your question" id="qsn" ng-model="qsn"></textarea>
+</td>
+ 
+    </tr>
+	
+	<tr><td>
+	<button id="submit" ng-click="getTask()">Update</button></td>
+	</tr>
+    
+  </tbody>
+</table>
+
+</div>	
+</div>
+
+
+
+
+<div ng-controller="dashCtrl">
+
+
+<div class="container" style="padding: 50ptyx; padding-top: 2px">
+
+<select id="route" ng-change="clearData()" ng-model="route">
+<option selected="selected">Select Company</option>
+<option>Miracle</option><option>Tcs</option>
+</select>
+
+<label ng-show="route">
+<select id="route1" ng-change="clearData()" ng-model="route1" >
+<option selected="selected">Select Dept</option>
+<option>Hubble</option><option>Apcloud</option>
+<option>AppDev</option><option>Sales</option>
+</select>
+</label>
+
+<button ng-click="dash()">get data</button>
+</div>
+<br>
+
+<div class="container" style="padding: 50ptyx; padding-top: 2px">
+
+<table class="table table-striped table-inverse" ng-show!="res1" >
+  <thead>
+    <tr class="bg-primary">
+      <th>Employee Name</th>
+      <th>Email ID</th>
+      <th>Phone Number</th>
+      <th>Employee ID</th>
+      <th>Project Name</th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="h in res1">
+    <tr>
+     
+      <td>{{h.Name}}</td>
+      <td>{{h.Email}}</td>      
+      <td>{{h.Pno}}</td>
+      <td>{{h.Empid}}</td>
+      <td>{{h.Project}}</td>
+ 
+    </tr>
+    
+  </tbody>
+</table>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<div ng-controller="getprofileCtrl">
+	<div class="container" style="padding: 50ptyx; padding-top: 2px">
+<center><b>My Profile Details</b></center>
+<table class="table table-bordered table-inverse " ng-show="res1" ng-repeat="h in res1">
+ 
+  <tbody>
+    <tr class="bg-primary">
+      
+      <td class="bg-primary">Name</td>
+       <td>{{h.name}}</td>
+    </tr>
+    <tr class="bg-primary">
+      
+      <td class="bg-primary">Emp ID</td>
+      <td>{{h.eid}}</td>
+    </tr>
+    <tr class="bg-primary">
+      
+      <td class="bg-primary">Email</td>
+      <td>{{h.email}}</td>
+    </tr>
+    <tr class="bg-primary">
+     
+      <td class="bg-primary">Designation</td>
+      <td>{{h.designation}}</td>
+    </tr>
+	<tr class="bg-primary">
+      
+      <td class="bg-primary">Reports To</td>
+      <td>{{h.reportsTo}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+
+
+
+<div ng-controller="searchCtrl">
+
+
+ 
+ <div class="container" style="padding: 50ptyx; padding-top: 2px">APCloud Employee Details
+   <div class="list">
+<label class="item item-input">
+<input type="text" placeholder="Name" ng-model="data.name">
+</label>
+<button class="button button-block button-royal" ng-click="search(data)">Search</button>
+</div>
+</div><br><br>
+
+
+
+
+<div class="container" style="padding: 50ptyx; padding-top: 2px">
+
+<table class="table table-striped table-inverse" ng-show!="res2">
+  <thead>
+    <tr class="bg-primary">
+      <th>Employee Name</th>
+      <th>Email ID</th>
+      <th>Phone Number</th>
+      <th>Employee ID</th>
+      <th>Project Name</th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="h in res2">
+    <tr>
+     
+      <td>{{h.Name}}</td>
+      <td>{{h.Email}}</td>      
+      <td>{{h.Pno}}</td>
+      <td>{{h.Empid}}</td>
+      <td>{{h.Project}}</td>
+ 
+    </tr>
+    
+  </tbody>
+</table>
+
+</div>
+
+
+</div>
+

@@ -1,0 +1,46 @@
+
+<div ng-controller="empCtrl">
+
+
+<div class="container" style="padding: 50ptyx; padding-top: 2px">
+
+<table class="table table-striped table-inverse" ng-show="mani" >
+  <thead>
+    <tr class="bg-primary">
+      <th>Email ID</th>
+      <th>Task Description</th>
+      <th>Assigned By</th>
+      <th>Comments</th>
+      <th>Status</th>
+	  <th>Action</th>
+    </tr>
+  </thead>
+  <tbody  ng-repeat="teja in mani">
+    <tr>
+     
+      <td><input type="text" ng-value="teja.assignedto" ng-model="teja.assignedto" id="to"  class="form-control" placeholder="My Email ID"  readonly></td>
+      <td><textarea ng-value="teja.taskdetails" ng-model="teja.taskdetails" id="details"  class="form-control" placeholder="Task Description" readonly>
+				{{teja.taskdetails}}
+				</textarea></td>      
+      <td><input type="text" ng-value="teja.assignedby" ng-model="teja.assignedby" id="by"  class="form-control" placeholder="Assigned By" readonly>
+				</td>
+      <td><input type="text" class="form-control"  ng-value="teja.comments" ng-model="teja.comments" id="comments" placeholder="Comments" >
+				</td>
+      <td><select name="department" class="form-control" ng-value="teja.status" ng-model="teja.status" id="status">
+					<option value="">Status</option>
+					<option>Pending</option>
+					<option>Completed</option>
+					<option>Partial</option>
+					
+				</select></td>
+				
+		<td><button id="submit" ng-click="update(teja)">Update</button></td>
+ 
+    </tr>
+    
+  </tbody>
+</table>
+
+</div>
+	
+</div>

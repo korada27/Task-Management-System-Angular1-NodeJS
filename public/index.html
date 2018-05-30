@@ -1,0 +1,53 @@
+<html>
+<head>
+<h3><center>Welcome</center></h3>
+<link href="css/bootstrap.css" rel="stylesheet">
+
+	<link href='http://fonts.googleapis.com/css?family=Raleway:300,200' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+
+
+</head>
+
+<body>
+	
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28//angular-route.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+	<script type="text/javascript" src="main.js"></script>
+	<div ng-app="mainApp" ng-controller="myctrl">
+	<div class="navbar navbar-default" ng-if="location.path()!=='/login'">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand whiteText" href="#"><strong>Employee Page</strong></a>
+			</div>
+			<div class="collapse navbar-collapse" id="headbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a class="whiteText" ng-click="dashpage()">Dashboard</a></li>
+					<li><a class="whiteText" ng-click="profilepage()">Profile</a></li>
+					<li><a class="whiteText" ng-click="searchpage()">Employee Search</a></li>
+					<li><a class="whiteText" ng-click="statuspage()">Get Status</a></li>
+					<li><a class="whiteText" ng-click="assignpage()" ng-if="z==Lead">AssignTask</a></li>
+					<li><a class="whiteText" ng-click="logout()">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<ng-view></ng-view>
+	
+
+	
+	
+	
+	
+	</div>
+</body>
+
+</html>

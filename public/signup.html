@@ -1,0 +1,41 @@
+<div ng-controller="adminCtrl">
+
+	<div  class="container" style="padding: 15ptyx; padding-top: 2px" ng-repeat="x in r">
+		
+		<form name="studentForm" ng-submit="submitForm(studentForm.$valid)" novalidate>
+			
+			<div class="form-group has-feedback">
+				<!-- ng-model directive binds the value of HTML controls (input, select, textarea) to application data -->
+				<input type="text" class="form-control" ng-value="x.assignedto"  readonly>
+				<input type="text" class="form-control" ng-value="x.taskdetails" readonly>
+				<input type="text" class="form-control" ng-value="x.comments" readonly>
+				<input type="text" class="form-control" ng-value="x.status" readonly>
+				<br />
+			</div>
+			
+			<br>
+			</div>
+			
+<div class="form-group has-feedback" ng-show="a">
+Assign Task To :<select ng-model="n" ng-options="my.email as my.name for my in a"></select>
+<h3>{{n}}</h3>
+</div>
+			
+<div class="form-group has-feedback">
+Task Desciption :
+<textarea row="10" placeholder="enter your question" id="qsn" ng-model="qsn"></textarea>
+
+
+</div>
+			
+			
+			<div class="form-group has-feedback">
+				<ul class="pagination pagination-lg">
+
+					<li class="pageBtn"><button id="submit" ng-click="getTask()">Update</button></li>
+				</ul>
+			</div>
+		</form>
+	
+
+</div>

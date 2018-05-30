@@ -1,0 +1,52 @@
+<div ng-controller="dashCtrl">
+
+
+<div class="container" style="padding: 50ptyx; padding-top: 2px">
+
+<select id="route" ng-change="clearData()" ng-model="route">
+<option selected="selected">Select Company</option>
+<option>Miracle</option><option>Tcs</option>
+</select>
+
+<label ng-show="route">
+<select id="route1" ng-change="clearData()" ng-model="route1" >
+<option selected="selected">Select Dept</option>
+<option>Hubble</option><option>Apcloud</option>
+<option>AppDev</option><option>Sales</option>
+</select>
+</label>
+
+<button ng-click="dash()">get data</button>
+</div>
+<br>
+
+<div class="container" style="padding: 50ptyx; padding-top: 2px">
+
+<table class="table table-striped table-inverse" ng-show!="res1" >
+  <thead>
+    <tr class="bg-primary">
+      <th>Employee Name</th>
+      <th>Email ID</th>
+      <th>Phone Number</th>
+      <th>Employee ID</th>
+      <th>Project Name</th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="h in res1">
+    <tr>
+     
+      <td>{{h.Name}}</td>
+      <td>{{h.Email}}</td>      
+      <td>{{h.Pno}}</td>
+      <td>{{h.Empid}}</td>
+      <td>{{h.Project}}</td>
+ 
+    </tr>
+    
+  </tbody>
+</table>
+
+</div>
+
+
+</div>
